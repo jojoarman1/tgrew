@@ -1,0 +1,9 @@
+﻿aiogram==2.9.0
+aiohttp
+aiosqlite
+asyncpg
+Pyrogram
+PySocks
+pytest
+pytz
+tortoise-orm
