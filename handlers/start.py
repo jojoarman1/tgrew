@@ -241,7 +241,7 @@ async def back_to_menu(callback_query: types.CallbackQuery):
 
     bt_invite_friend = InlineKeyboardButton('Пригласить друга', switch_inline_query=share_text)
     bt_my_referrals = InlineKeyboardButton('Список моих рефералов', callback_data='my_referrals')
-    bt_faq = InlineKeyboardButton('Вопросы на ответы', callback_data='faq')  # Кнопка для FAQ
+    bt_faq = InlineKeyboardButton('Ответы на вопросы', callback_data='faq')  # Кнопка для FAQ
 
     # Создание клавиатуры с двумя кнопками в строке
     kb_user_menu = InlineKeyboardMarkup().add(bt_invite_friend, bt_my_referrals).add(bt_faq)
@@ -262,7 +262,7 @@ async def faq_menu(callback_query: types.CallbackQuery):
     bt_how_it_works = InlineKeyboardButton('Как это работает', callback_data='how_it_works')
     bt_referral_system = InlineKeyboardButton('Система рефералов', callback_data='referral_system')
     bt_invite_friends = InlineKeyboardButton('Приглашение друзей', callback_data='invite_friends')  # Новая кнопка
-    bt_contact_support = InlineKeyboardButton('Связаться с оператором', url='https://t.me/TonBankCEO')  # Новая кнопка
+    bt_contact_support = InlineKeyboardButton('Связаться с оператором', url='https://t.me/Statenkov')  # Новая кнопка
     bt_back = InlineKeyboardButton('Назад', callback_data='back_to_menu')
 
     # Создаем клавиатуру FAQ с новыми кнопками
