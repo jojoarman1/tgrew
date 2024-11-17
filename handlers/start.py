@@ -1,4 +1,3 @@
-# start.py
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from app import dp
@@ -65,6 +64,12 @@ async def get_channel_invite_link(channel_username: str) -> str:
 @dp.message_handler(commands=['start'], state='*')
 async def process_start(jam: types.Message, state: FSMContext):
     await state.finish()
+
+    # Check if the user has a username
+    if not jam.from_user.username:
+        await jam.answer("❌ <b>Извините, для использования бота необходимо иметь username в Telegram. "
+                         "Пожалуйста, установите username в настройках Telegram и попробуйте снова.</b>")
+        return
 
     if ' ' in jam.text:
         give_callback_value = jam.text.split(' ')[1]
@@ -301,5 +306,3 @@ async def invite_friends(callback_query: types.CallbackQuery):
 
     await callback_query.message.edit_text(text, reply_markup=markup)
     await callback_query.answer()
-
-
